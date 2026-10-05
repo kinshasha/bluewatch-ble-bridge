@@ -1,0 +1,49 @@
+{
+  "title": "BlueWatch BLE Bridge",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect BlueWatch",
+        "description": "Forward passive Bluetooth observations from Home Assistant's configured adapters and proxies.",
+        "data": {
+          "base_url": "BlueWatch URL",
+          "token": "Ingestion token",
+          "batch_interval": "Batch interval (seconds)",
+          "heartbeat_interval": "Presence refresh interval (seconds)",
+          "service_uuids_allow": "Allowed service UUIDs (comma separated)",
+          "service_uuids_deny": "Excluded service UUIDs",
+          "addresses_allow": "Allowed Bluetooth addresses",
+          "addresses_deny": "Excluded Bluetooth addresses",
+          "sources_allow": "Allowed scanner sources",
+          "sources_deny": "Excluded scanner sources"
+        }
+      }
+    },
+    "error": {
+      "invalid_config": "Enter an HTTPS URL or a private/local HTTP URL and a token of at least 32 characters."
+    },
+    "abort": {
+      "already_configured": "This BlueWatch destination is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "BlueWatch BLE Bridge options",
+        "description": "Leave the token blank to retain the existing token. Filters are optional comma-separated values.",
+        "data": {
+          "base_url": "BlueWatch URL",
+          "token": "Replacement ingestion token",
+          "batch_interval": "Batch interval (seconds)",
+          "heartbeat_interval": "Presence refresh interval (seconds)",
+          "service_uuids_allow": "Allowed service UUIDs (comma separated)",
+          "service_uuids_deny": "Excluded service UUIDs",
+          "addresses_allow": "Allowed Bluetooth addresses",
+          "addresses_deny": "Excluded Bluetooth addresses",
+          "sources_allow": "Allowed scanner sources",
+          "sources_deny": "Excluded scanner sources"
+        }
+      }
+    }
+  }
+}

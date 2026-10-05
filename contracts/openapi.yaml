@@ -1,0 +1,47 @@
+openapi: 3.1.0
+info:
+  title: BlueWatch External BLE Receiver
+  version: 1.0.0
+paths:
+  /api/v1/observations/ble:
+    post:
+      summary: Submit recent passive BLE observations
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: ./ble-observation-v1.schema.json
+      responses:
+        "200":
+          description: Batch processed
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [accepted, rejected, deduplicated]
+                properties:
+                  accepted: {type: integer, minimum: 0}
+                  rejected: {type: integer, minimum: 0}
+                  deduplicated: {type: integer, minimum: 0}
+        "400": {description: Invalid batch}
+        "401": {description: Invalid token}
+        "413": {description: Payload too large}
+        "429": {description: Receiver busy}
+        "503": {description: Receiver not configured or disabled}
+  /api/v1/observations/ble/capabilities:
+    get:
+      summary: Read receiver capabilities and limits
+      security:
+        - bearerAuth: []
+      responses:
+        "200": {description: Receiver capabilities}
+        "401": {description: Invalid token}
+        "503": {description: Receiver not configured}
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

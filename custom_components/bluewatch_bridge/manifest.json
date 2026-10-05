@@ -1,0 +1,12 @@
+{
+  "domain": "bluewatch_bridge",
+  "name": "BlueWatch BLE Bridge",
+  "version": "0.1.0",
+  "config_flow": true,
+  "dependencies": ["bluetooth"],
+  "documentation": "https://github.com/kinshasha/bluewatch-ble-bridge",
+  "issue_tracker": "https://github.com/kinshasha/bluewatch-ble-bridge/issues",
+  "iot_class": "local_push",
+  "integration_type": "service",
+  "codeowners": ["@kinshasha"]
+}
