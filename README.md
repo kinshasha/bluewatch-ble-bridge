@@ -4,6 +4,9 @@ A passive, outbound Home Assistant integration that forwards Bluetooth Low
 Energy observations from Home Assistant's local adapters and remote Bluetooth
 proxies to [BlueWatch](https://github.com/PolarPatch/BlueWatch).
 
+The integration icon is derived from the BlueWatch project logo under its MIT
+licence.
+
 ## Properties
 
 - Uses Home Assistant's shared, proxy-aware Bluetooth manager.
